@@ -12,6 +12,8 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <style>
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -120,6 +122,14 @@
         method="POST"
       >
         <input type="hidden" name="entry.1721134841" value="" />
+
+        <div class="form-group">
+          <div
+            class="g-recaptcha"
+            data-sitekey="6Lcod40qAAAAAPq_DycfFl60uJ9SXq7NeDiY5GbJ"
+          ></div>
+        </div>
+        <br />
 
         <div class="form-group">
           <label class="required">Inquiry Type</label>

@@ -112,20 +112,13 @@
           padding: 20px;
         }
       }
-
-      .g-recaptcha .g-recaptcha-response {
-        display: block !important;
-      }
-      .g-recaptcha > div {
-        height: auto !important;
-        min-height: 80px;
-      }
     </style>
   </head>
   <body>
     <div class="form-container">
       <h1></h1>
       <form
+        id="demo-form"
         action="https://docs.google.com/forms/d/e/1FAIpQLSc018GpTOpZsyZUCvDA1-Nmtzyd_Ly4hg8oUVRiRqSw4tUaNA/formResponse"
         method="POST"
       >
@@ -172,6 +165,8 @@
             >I agree to the Privacy Policy</label
           >
         </div>
+        <textarea name="recaptcha-token" id="recaptcha-token"></textarea>
+
         <button
           type="submit"
           class="g-recaptcha"
@@ -186,7 +181,8 @@
       <script>
         function onSubmit(token) {
           console.log("reCAPTCHA token:", token);
-          // document.getElementById("demo-form").submit();
+          document.getElementById("recaptcha-token").value = token;
+          document.getElementById("demo-form").submit();
         }
       </script>
     </div>

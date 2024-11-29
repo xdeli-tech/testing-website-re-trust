@@ -12,7 +12,7 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc6Ao0qAAAAABEzKlAo8_vFcpZ6hPkYj9P5DoMk"></script>
 
     <style>
       body {
@@ -130,15 +130,6 @@
         method="POST"
       >
         <input type="hidden" name="entry.1721134841" value="" />
-
-        <div class="form-group">
-          <div
-            class="g-recaptcha"
-            data-sitekey="6Lcod40qAAAAAPq_DycfFl60uJ9SXq7NeDiY5GbJ"
-          ></div>
-        </div>
-        <br />
-
         <div class="form-group">
           <label class="required">Inquiry Type</label>
           <select name="entry.913999146" required>
@@ -181,9 +172,23 @@
             >I agree to the Privacy Policy</label
           >
         </div>
-
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          class="g-recaptcha"
+          data-sitekey="6Lc6Ao0qAAAAABEzKlAo8_vFcpZ6hPkYj9P5DoMk"
+          data-callback="onSubmit"
+          data-action="submit"
+        >
+          Submit
+        </button>
       </form>
+
+      <script>
+        function onSubmit(token) {
+          console.log("reCAPTCHA token:", token);
+          // document.getElementById("demo-form").submit();
+        }
+      </script>
     </div>
   </body>
 </html>
